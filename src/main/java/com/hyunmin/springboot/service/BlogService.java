@@ -5,7 +5,6 @@ import com.hyunmin.springboot.dto.AddArticleRequest;
 import com.hyunmin.springboot.repository.BlogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 
@@ -25,5 +24,9 @@ public class BlogService {
     public Article findById(long id) {
         return blogRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("not found: " + id));
+    }
+
+    public void delete(long id) {
+        blogRepository.deleteById(id);
     }
 }
