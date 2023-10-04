@@ -3,6 +3,7 @@ package com.hyunmin.springboot.controller;
 import com.hyunmin.springboot.domain.Article;
 import com.hyunmin.springboot.dto.AddArticleRequest;
 import com.hyunmin.springboot.dto.ArticleResponse;
+import com.hyunmin.springboot.dto.UpdateArticleRequest;
 import com.hyunmin.springboot.service.BlogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -42,5 +43,11 @@ public class BlogApiController {
     public ResponseEntity<Void> deleteArticle(@PathVariable long id) {
         blogService.delete(id);
         return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/api/articles/{id}")
+    public ResponseEntity<Article> updateArticle(@PathVariable long id, @RequestBody UpdateArticleRequest request) {
+        Article updatedArticle = blogService.update(id, request);
+        return ResponseEntity.ok().body(updatedArticle);
     }
 }
