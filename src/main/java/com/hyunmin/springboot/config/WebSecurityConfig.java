@@ -34,7 +34,7 @@ public class WebSecurityConfig {
                 .and()
                 .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/articles")
+                    .defaultSuccessUrl("/articles", true)
                 .and()
                 .logout()
                     .logoutSuccessUrl("/login")
