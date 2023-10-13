@@ -10,4 +10,3 @@ spring:
       enabled: true
 jwt:
   issuer: choihm9903@naver.com
-  secret_key: study-springboot
