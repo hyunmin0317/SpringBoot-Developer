@@ -8,7 +8,13 @@ spring:
   h2:
     console:
       enabled: true
-  profiles:
-    active: prd
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: client-id
+            client-secret: client-secret
 jwt:
   issuer: choihm9903@naver.com
+  secret_key: secret_key
