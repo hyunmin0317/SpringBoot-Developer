@@ -9,6 +9,6 @@ spring:
     console:
       enabled: true
   profiles:
-    active: local
+    active: prd
 jwt:
   issuer: choihm9903@naver.com
