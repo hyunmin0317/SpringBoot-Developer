@@ -8,5 +8,7 @@ spring:
   h2:
     console:
       enabled: true
+  profiles:
+    active: local
 jwt:
   issuer: choihm9903@naver.com
